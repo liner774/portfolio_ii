@@ -68,7 +68,7 @@ export const Banner = () => {
                   <p>
                     Hey there! I'm<b style={{ color: '#fad374' }}>Nyi Lynn Set</b>, a fresh full stack web developer. I love building websites that users find easy to use.
                     Throughout my studies, I've focused on user-friendly design and writing clean, efficient code.
-                    I enjoy teaming up with designers and stakeholders to bring projects to life.
+                    I enjoy teaming up with others and bringing projects to life.
                     <b style={{ color: '#091b35' }}>Thanks for checking out my portfolio! I'm excited to chat about any opportunities you have in mind!</b>
                   </p>
                   <Button variant="outline-light" onClick={onButtonClick} className="bounce-animation">

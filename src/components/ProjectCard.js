@@ -13,7 +13,7 @@ export const ProjectCard = ({ title, description, imgUrl }) => {
               <Col xs="auto">
                 <Button
                   variant="outline-light"
-                  onClick={() => window.location.href='https://github.com/'}
+                  onClick={() => window.open('https://github.com/', '_blank', 'noopener,noreferrer')}
                 >
                   Github
                 </Button>
@@ -21,9 +21,9 @@ export const ProjectCard = ({ title, description, imgUrl }) => {
               <Col xs="auto">
                 <Button
                   variant="outline-light"
-                  onClick={() => window.location.href='https://github.com/'}
+                  onClick={() => window.open('https://github.com/', '_blank', 'noopener,noreferrer')}
                 >
-                  Live
+                  On Live
                 </Button>
               </Col>
             </Row>
