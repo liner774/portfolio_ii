@@ -306,7 +306,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
-  width: 96%;
+  /* width: 96%;
+  background-color: rgba(15, 1, 15, 0.4);
+  padding: 20px;
+  border-radius: 10px; */
 }
 
 .banner button {
