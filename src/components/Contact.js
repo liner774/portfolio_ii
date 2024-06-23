@@ -99,16 +99,16 @@ export const Contact = () => {
                   <form onSubmit={onSubmit}>
                     <Row>
                       <Col size={12} sm={12} className="px-1">
-                        <input type="text" name="Name" placeholder="Name" />
+                        <input type="text" name="Name" placeholder="Name" required/>
                       </Col>
                       <Col size={12} sm={6} className="px-1">
-                        <input type="email" name="email" placeholder="Email Address" />
+                        <input type="email" name="email" placeholder="Email Address"  required/>
                       </Col>
                       <Col size={12} sm={6} className="px-1">
-                        <input type="tel" name="tel" placeholder="Phone No." />
+                        <input type="tel" name="tel" placeholder="Phone No." required/>
                       </Col>
                       <Col size={12} className="px-1">
-                        <textarea name="message" rows="6" placeholder="Message"></textarea>
+                        <textarea name="message" rows="6" placeholder="Message"required></textarea>
                         <button type="submit"><span>{buttonText}</span></button>
                       </Col>
                     </Row>
