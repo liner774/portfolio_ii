@@ -349,7 +349,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .txt-rotate>.wrap {
-  border-right: 0.08em solid #666;
+  border-right: 0.08em solid #091b35;
 }
 
 /************ Skills Css ************/
@@ -542,7 +542,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: -4;
 }
 
-/************ Projects Css ************/
+/************ Contacts Css ************/
 .contact {
   background: linear-gradient(90.21deg, #9a98bd -5.91%, #5a4b9f 111.58%);
   padding: 60px 0 200px 0;
@@ -594,7 +594,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .contact form button {
   font-weight: 700;
-  color: #000;
+  color:#090909;
   background-color: #fdf9e7;
   padding: 14px 48px;
   font-size: 18px;
@@ -602,6 +602,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 0;
   position: relative;
   transition: 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 3px #000000;
+  transition: transform 0.1s, box-shadow 0.1s;
 }
 
 .contact form button span {
@@ -612,6 +615,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .contact form button:hover {
   color: #fdf9e7;
 }
+ .contact form button:active {
+   transform: translateY(3px);
+   box-shadow: none;
+ }
 
 .contact form button::before {
   content: "";
@@ -627,6 +634,18 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .contact form button:hover::before {
   width: 100%;
+}
+
+#bird{
+  width: 500px;
+  height: 500px;
+}
+
+@media (max-width: 575px) {
+  #bird {
+      width: 200px;
+      height: 200px;
+    }
 }
 
 /************ Footer Css ************/
@@ -675,3 +694,4 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .bounce-animation:hover {
   animation-play-state: paused;
 }
+

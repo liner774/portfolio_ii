@@ -1,4 +1,5 @@
-import { useState } from "react";
+import Swal from 'sweetalert2';
+import { useState } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.gif";
 import 'animate.css';
@@ -6,42 +7,71 @@ import TrackVisibility from 'react-on-screen';
 import contactBg from '../assets/img/contact-bg.jpg';
 
 export const Contact = () => {
-  const formInitialDetails = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    message: ''
-  };
-  const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState('Send');
-  const [status, setStatus] = useState({});
 
-  const onFormUpdate = (category, value) => {
-    setFormDetails({
-      ...formDetails,
-      [category]: value
-    });
-  };
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setButtonText('Sending...');
+    
+    const formData = new FormData(event.target);
+    formData.append("access_key", "d0cde1a5-0b52-421e-bbd1-6d4ea0635845");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setButtonText("Sending...");
-    let response = await fetch("http://localhost:5000/contact", {
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json;charset=utf-8",
+        "Content-Type": "application/json",
+        Accept: "application/json"
       },
-      body: JSON.stringify(formDetails),
-    });
-    setButtonText("Send");
-    let result = await response.json();
-    setFormDetails(formInitialDetails);
-    if (result.code === 200) {
-      setStatus({ success: true, message: 'Message sent successfully' });
+      body: json
+    }).then((res) => res.json());
+
+    const swalStyles = `
+      .swal2-confirm {
+        background-color: #264d73 !important;
+        color:  #fdf9e7 !important;
+      }
+    `;
+
+    if (res.success) {
+      Swal.fire({
+        title: "Success!",
+        text: "Message Sent Successfully!",
+        icon: "success",
+        customClass: {
+          confirmButton: 'swal2-confirm'
+        },
+        didOpen: () => {
+          const style = document.createElement('style');
+          style.innerHTML = swalStyles;
+          document.head.appendChild(style);
+        },
+        didClose: () => {
+          document.head.querySelector('style').remove();
+        }
+      });
     } else {
-      setStatus({ success: false, message: 'Something went wrong, please try again later.' });
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+        customClass: {
+          confirmButton: 'swal2-confirm'
+        },
+        didOpen: () => {
+          const style = document.createElement('style');
+          style.innerHTML = swalStyles;
+          document.head.appendChild(style);
+        },
+        didClose: () => {
+          document.head.querySelector('style').remove();
+        }
+      });
     }
+
+    setButtonText('Send');
   };
 
   return (
@@ -57,39 +87,30 @@ export const Contact = () => {
           <Col size={12} md={6}>
             <TrackVisibility>
               {({ isVisible }) =>
-                <img className={isVisible ? "animate__animated animate__zoomIn" : ""} src={contactImg} alt="Contact Us" style={{ width: "500px", height: "500px" }}/>
+                <img className={isVisible ? "animate__animated animate__zoomIn" : ""} src={contactImg} alt="Contact Us" id='bird' />
               }
             </TrackVisibility>
           </Col>
           <Col size={12} md={6}>
             <TrackVisibility>
               {({ isVisible }) =>
-                <div >
+                <div>
                   <h2>Get In Touch</h2>
-                  <form onSubmit={handleSubmit}>
+                  <form onSubmit={onSubmit}>
                     <Row>
-                      <Col size={12} sm={6} className="px-1">
-                        <input type="text" value={formDetails.firstName} placeholder="First Name" onChange={(e) => onFormUpdate('firstName', e.target.value)} />
+                      <Col size={12} sm={12} className="px-1">
+                        <input type="text" name="Name" placeholder="Name" />
                       </Col>
                       <Col size={12} sm={6} className="px-1">
-                        <input type="text" value={formDetails.lastName} placeholder="Last Name" onChange={(e) => onFormUpdate('lastName', e.target.value)} />
+                        <input type="email" name="email" placeholder="Email Address" />
                       </Col>
                       <Col size={12} sm={6} className="px-1">
-                        <input type="email" value={formDetails.email} placeholder="Email Address" onChange={(e) => onFormUpdate('email', e.target.value)} />
-                      </Col>
-                      <Col size={12} sm={6} className="px-1">
-                        <input type="tel" value={formDetails.phone} placeholder="Phone No." onChange={(e) => onFormUpdate('phone', e.target.value)} />
+                        <input type="tel" name="tel" placeholder="Phone No." />
                       </Col>
                       <Col size={12} className="px-1">
-                        <textarea rows="6" value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)}></textarea>
+                        <textarea name="message" rows="6" placeholder="Message"></textarea>
                         <button type="submit"><span>{buttonText}</span></button>
                       </Col>
-                      {
-                        status.message &&
-                        <Col>
-                          <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
-                        </Col>
-                      }
                     </Row>
                   </form>
                 </div>}
@@ -98,5 +119,5 @@ export const Contact = () => {
         </Row>
       </Container>
     </section>
-  )
+  );
 }

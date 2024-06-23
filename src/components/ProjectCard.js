@@ -23,7 +23,7 @@ export const ProjectCard = ({ title, description, imgUrl }) => {
                   variant="outline-light"
                   onClick={() => window.open('https://github.com/', '_blank', 'noopener,noreferrer')}
                 >
-                  On Live
+                  See Live
                 </Button>
               </Col>
             </Row>

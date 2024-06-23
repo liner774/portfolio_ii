@@ -49,7 +49,7 @@ export const NavBar = () => {
               <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
             </Nav>
             <span className="navbar-text">
-              <div className="social-icon">
+              {/* <div className="social-icon">
                 <a href='https://www.linkedin.com/in/nyi-lynn-a6a8b92ba/' target="_blank" rel="noopener noreferrer">
                   <img src={navIcon1} alt="LinkedIn" />
                 </a>
@@ -62,9 +62,9 @@ export const NavBar = () => {
                 <a href="tel:09692136537" target="_blank" rel="noopener noreferrer">
                   <img src={navIcon3} alt="Phone" />
                 </a>
-              </div>
+              </div> */}
 
-              <HashLink to='#connect'>
+              <HashLink to='#footer'>
                 <button className="vvd"><span>Let’s Connect</span></button>
               </HashLink>
             </span>
