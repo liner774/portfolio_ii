@@ -28,7 +28,7 @@ export const Skills = () => {
 const renderExperienceItem = (title, levels) => (
   <article>
     <div style={{ textAlign: 'center' }}>
-      <img src={checkmark} alt="Checkmark Image" style={{ height: "100px", width: "100px" }} />
+      <img src={checkmark} alt="Checkmark" style={{ height: "100px", width: "100px" }} />
       <h3>{title}</h3>
     </div>
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginLeft: 'calc(50% - 50px)', width: '200px' }}>
@@ -66,7 +66,7 @@ const renderExperienceItem = (title, levels) => (
           </div>
         </div>
       </div>
-      <img className="background-image-left" src={colorSharp} alt="Image" />
+      <img className="background-image-left" src={colorSharp} alt="bg" />
     </section>
   );
 };
