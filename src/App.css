@@ -33,7 +33,7 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
-  background-color: #0f010f !important;
+  background-color: #020f1e !important;
   color: #fdf9e7 !important;
   font-family: 'Centra', sans-serif !important;
 }
@@ -102,10 +102,7 @@ p.danger {
   a:hover {
       text-decoration: none;
     }
-    
- 
 }
-
 /************ Navbar Css ************/
 nav.navbar {
   padding: 18px 0;
@@ -349,6 +346,7 @@ nav.navbar .navbar-collapse {
   align-items: center;
 }
 
+
 .banner button svg {
   font-size: 25px;
   margin-left: 10px;
@@ -425,6 +423,7 @@ nav.navbar .navbar-collapse {
   bottom: 0;
   z-index: -4;
 }
+
 
 /************ Projects Css ************/
 .project {
@@ -521,7 +520,8 @@ nav.navbar .navbar-collapse {
 
 .proj-imgbx::before {
   content: "";
-  background: linear-gradient(90.21deg, #274d73 -5.91%, #3aafd2 111.58%);
+  /* background: linear-gradient(90.21deg, #274d73 -5.91%, #3aafd2 111.58%); */
+  background-color: #020f1e;
   opacity: 0.85;
   position: absolute;
   width: 100%;

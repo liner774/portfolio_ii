@@ -3,41 +3,53 @@ import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import projImg4 from "../assets/img/project-img4.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
-
   const projects = [
     {
       title: "Business Startup",
       description: "Design & Development",
       imgUrl: projImg1,
+      githubUrl: "https://github.com/user/project1",
+      liveUrl: "https://project1-live.com",
     },
     {
       title: "Business Startup",
       description: "Design & Development",
       imgUrl: projImg2,
+      githubUrl: "https://github.com/user/project2",
+      liveUrl: "https://project2-live.com",
     },
     {
       title: "Business Startup",
       description: "Design & Development",
       imgUrl: projImg3,
+      githubUrl: "https://github.com/user/project3",
+      liveUrl: "https://project3-live.com",
     },
     {
       title: "Business Startup",
       description: "Design & Development",
       imgUrl: projImg1,
+      githubUrl: "https://github.com/user/project4",
+      liveUrl: "https://project4-live.com",
     },
     {
       title: "Business Startup",
       description: "Design & Development",
       imgUrl: projImg2,
+      githubUrl: "https://github.com/user/project5",
+      liveUrl: "https://project5-live.com",
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
+      title: "Portfolio Page",
+      description: "Made with just pure HTML, CSS & JS",
+      imgUrl: projImg4,
+      githubUrl: "https://github.com/liner774/Portfolio.git",
+      liveUrl: "https://liner774.github.io/Portfolio/",
     },
   ];
 
@@ -72,7 +84,7 @@ export const Projects = () => {
                               <ProjectCard
                                 key={index}
                                 {...project}
-                                />
+                              />
                             )
                           })
                         }
