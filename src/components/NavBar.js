@@ -35,7 +35,10 @@ export const NavBar = () => {
           <Navbar.Brand href="#">
             {/* <img src={logo} alt="Logo" /> */}
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" >
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            style={{ order: -1 }} 
+          >
             <span className="navbar-toggler-icon"></span>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
@@ -45,21 +48,6 @@ export const NavBar = () => {
               <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
             </Nav>
             <span className="navbar-text">
-              {/* <div className="social-icon">
-                <a href='https://www.linkedin.com/in/nyi-lynn-a6a8b92ba/' target="_blank" rel="noopener noreferrer">
-                  <img src={navIcon1} alt="LinkedIn" />
-                </a>
-              <a href="mailto:annliner99@gmail.com" target="_blank" rel="noopener noreferrer">
-                <img src={navIcon4} alt="Phone" />
-              </a>
-                <a href='https://github.com/liner774' target="_blank" rel="noopener noreferrer">
-                  <img src={navIcon2} alt="GitHub" />
-                </a>
-                <a href="tel:09692136537" target="_blank" rel="noopener noreferrer">
-                  <img src={navIcon3} alt="Phone" />
-                </a>
-              </div> */}
-
               <HashLink to='#footer'>
                 <button className="vvd"><span>Let’s Connect</span></button>
               </HashLink>

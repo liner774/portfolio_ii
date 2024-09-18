@@ -107,7 +107,7 @@ export const Contact = () => {
                       <Col size={12} sm={6} className="px-1">
                         <input type="tel" name="tel" placeholder="Phone No." required/>
                       </Col>
-                      <Col size={12} className="px-1">
+                      <Col size={12} className="px-1 ">
                         <textarea name="message" rows="6" placeholder="Message"required></textarea>
                         <button type="submit"><span>{buttonText}</span></button>
                       </Col>

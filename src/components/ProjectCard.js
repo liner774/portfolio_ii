@@ -10,26 +10,30 @@ export const ProjectCard = ({ title, description, imgUrl, githubUrl, liveUrl }) 
           <span>{description}</span>
           <div className="btn-container mt-3">
             <Row className="justify-content-center">
-              <Col xs="auto">
-                <Button
-                  variant="outline-light"
-                  onClick={() => window.open(githubUrl, '_blank', 'noopener,noreferrer')}
-                >
-                  Github
-                </Button>
-              </Col>
-              <Col xs="auto">
-                <Button
-                  variant="outline-light"
-                  onClick={() => window.open(liveUrl, '_blank', 'noopener,noreferrer')}
-                >
-                  See Live
-                </Button>
-              </Col>
+              {githubUrl && (
+                <Col xs="auto">
+                  <Button
+                    variant="outline-light"
+                    onClick={() => window.open(githubUrl, '_blank', 'noopener,noreferrer')}
+                  >
+                    Github
+                  </Button>
+                </Col>
+              )}
+              {liveUrl && (
+                <Col xs="auto">
+                  <Button
+                    variant="outline-light"
+                    onClick={() => window.open(liveUrl, '_blank', 'noopener,noreferrer')}
+                  >
+                    See Live
+                  </Button>
+                </Col>
+              )}
             </Row>
           </div>
         </div>
       </div>
     </Col>
-  )
-}
+  );
+};
