@@ -64,7 +64,7 @@ export const Banner = () => {
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <span className="tagline">Welcome to my Portfolio</span>
-                  <h1>{`Hi! I'm Lynn, `}<br /> <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "Game Dev", "Artist" ]'><span className="wrap">{text}</span></span></h1>
+                  <h1 style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>{`Hi! I'm Lynn, `}<br /> <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "Game Dev", "Artist" ]'><span className="wrap">{text}</span></span></h1>
                   
                   {/* Background blur wrapper for paragraph */}
                   <div style={{

@@ -95,7 +95,7 @@ export const Contact = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div>
-                  <h2>Get In Touch</h2>
+                  <h2 style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>Get In Touch</h2>
                   <form onSubmit={onSubmit}>
                     <Row>
                       <Col size={12} sm={12} className="px-1">

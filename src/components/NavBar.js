@@ -30,7 +30,15 @@ export const NavBar = () => {
 
   return (
     <Router>
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+      <Navbar 
+        expand="md" 
+        className={scrolled ? "scrolled" : ""}
+        style={{
+          transition: 'all 0.3s ease-in-out', // Smooth transition when scrolled
+          borderBottom: scrolled ? "1px solid #fff" : "none", // Add 1px line when scrolled
+          boxShadow: scrolled ? "0px 1px 5px rgba(255, 255, 255, 0.5)" : "none", // Optional box-shadow for more depth
+        }}
+      >
         <Container>
           <Navbar.Brand href="#">
             {/* <img src={logo} alt="Logo" /> */}
