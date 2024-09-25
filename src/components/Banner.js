@@ -60,9 +60,6 @@ export const Banner = () => {
       <Container>
         <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <span className="tagline">Welcome to my Portfolio</span>
                   <h1 style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>{`Hi! I'm Lynn, `}<br /> <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "Game Dev", "Artist" ]'><span className="wrap">{text}</span></span></h1>
                   
@@ -85,8 +82,6 @@ export const Banner = () => {
                   <Button variant="outline-light" onClick={onButtonClick} className="bounce-animation">
                     Download CV
                   </Button>
-                </div>}
-            </TrackVisibility>
           </Col>
         </Row>
       </Container>
